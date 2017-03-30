@@ -15,7 +15,7 @@
 
             public double GetVolume()
             {
-                return m_Height / 6.0;
+                return m_Height * m_SideLength / 6.0;
             }
         }
 

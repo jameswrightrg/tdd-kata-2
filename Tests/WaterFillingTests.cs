@@ -12,7 +12,7 @@ namespace Tests
         [Test]
         public void ZeroDimensionCubeHoldsNoWater()
         {
-            var emptyCube = Cube.Create(0,0,0);
+            var emptyCube = Cube.Create(0);
             var fillMeasurer = new FillMeasurer();
             Assert.That(fillMeasurer.Measure(emptyCube), Is.Zero);
         }

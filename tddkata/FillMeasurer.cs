@@ -6,7 +6,7 @@ namespace tddkata
     {
         public double Measure(object emptyCube)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

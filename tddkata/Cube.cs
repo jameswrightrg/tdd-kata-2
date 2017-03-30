@@ -4,9 +4,9 @@ namespace tddkata
 {
     public class Cube
     {
-        public static Cube Create(int i, int i1, int i2)
+        public static Cube Create(int sidelength)
         {
-            throw new NotImplementedException();
+            return new Cube();
         }
     }
 }

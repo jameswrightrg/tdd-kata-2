@@ -27,5 +27,12 @@ namespace Tests
             var cube = Cube.Create(sideLength);
             Assert.That(fillMeasurer.Measure(cube), Is.EqualTo(Math.Pow(sideLength, 3)).Within(0.001));
         }
+
+        public void ZeroDimensionCylinderHoldsNoWater()
+        {
+            var fillMeasurer = new FillMeasurer();
+            var emptyCylinder = new Cylinder(0, 0);
+            Assert.That(fillMeasurer.Measure(emptyCylinder), Is.Zero);
+        }
     }
 }

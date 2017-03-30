@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Cube.cs" />
+    <Compile Include="Cylinder.cs" />
     <Compile Include="FillMeasurer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

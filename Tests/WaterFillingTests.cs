@@ -70,6 +70,14 @@ namespace Tests
             Assert.That(MeasureShape(emptyPyramid), Is.Zero);
         }
 
+        [Test]
+        public void UnitSizedTriangleBasedPyramidHoldsWater()
+        {
+            IShape pyramid = PyramidFactory.Create(1, 1);
+            var volume = 1.0 / 6;
+            Assert.That(MeasureShape(pyramid), Is.EqualTo(volume).Within(0.00001));
+        }
+
 
         private static double MeasureShape(IShape shape)
         {

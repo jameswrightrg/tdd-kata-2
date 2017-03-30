@@ -93,6 +93,14 @@ namespace Tests
             Assert.That(MeasureShape(pyramid), Is.EqualTo(volume).Within(0.00001));
         }
 
+        [Test]
+        public void OddSizedSquareBasedPyramidHoldsWater()
+        {
+            IShape pyramid = PyramidFactory.Create(3, 4, 4);
+            var volume = 9.0 * 4 / 3;
+            Assert.That(MeasureShape(pyramid), Is.EqualTo(volume).Within(0.00001));
+        }
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

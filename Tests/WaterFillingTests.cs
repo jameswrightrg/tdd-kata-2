@@ -16,5 +16,13 @@ namespace Tests
             var fillMeasurer = new FillMeasurer();
             Assert.That(fillMeasurer.Measure(emptyCube), Is.Zero);
         }
+
+        [Test]
+        public void CubeOfUnitLengthHoldsWater()
+        {
+            var fillmeasurer = new FillMeasurer();
+            var cube = Cube.Create(1);
+            Assert.That(fillmeasurer.Measure(cube), Is.EqualTo(1).Within(0.001));
+        }
     }
 }

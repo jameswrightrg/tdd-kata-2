@@ -27,7 +27,8 @@ namespace Tests
         }
 
         [TestCase(2)]
-        public void CubeHoldsCubeOfSideLengthWater(int sideLength)
+        [TestCase(1.5)]
+        public void CubeHoldsCubeOfSideLengthWater(double sideLength)
         {
             var fillMeasurer = new FillMeasurer();
             var cube = Cube.Create(sideLength);

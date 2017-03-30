@@ -4,14 +4,14 @@ namespace tddkata
 {
     public class Cube
     {
-        public int Sidelength { get; }
+        public double Sidelength { get; }
 
-        private Cube(int sidelength)
+        private Cube(double sidelength)
         {
             Sidelength = sidelength;
         }
 
-        public static Cube Create(int sidelength)
+        public static Cube Create(double sidelength)
         {
             return new Cube(sidelength);
         }

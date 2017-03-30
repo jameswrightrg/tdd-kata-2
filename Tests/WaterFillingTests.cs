@@ -24,5 +24,13 @@ namespace Tests
             var cube = Cube.Create(1);
             Assert.That(fillmeasurer.Measure(cube), Is.EqualTo(1).Within(0.001));
         }
+
+        [TestCase(2)]
+        public void CubeHoldsCubeOfSideLengthWater(int sideLength)
+        {
+            var fillMeasurer = new FillMeasurer();
+            var cube = Cube.Create(sideLength);
+            Assert.That(fillMeasurer.Measure(cube), Is.EqualTo(sideLength ^ 3).Within(0.001));
+        }
     }
 }

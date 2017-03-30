@@ -40,6 +40,14 @@ namespace Tests
             Assert.That(MeasureShape(unitCylinder), Is.EqualTo(Math.PI).Within(0.00001));
         }
 
+        [Test]
+        public void UnitLengthCylinderHoldsPiRadiusSquaredWater()
+        {
+            double radius = 2;
+            IShape cylinder = new Cylinder(radius, 1);
+            Assert.That(MeasureShape(cylinder), Is.EqualTo(Math.PI*Math.Pow(radius, 2)).Within(0.0001));
+        }
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

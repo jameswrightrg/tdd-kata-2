@@ -15,7 +15,7 @@ namespace tddkata
 
         public double GetVolume()
         {
-            return Math.PI*Math.Pow(radius, 2);
+            return Math.PI*Math.Pow(radius, 2)*length;
         }
     }
 }

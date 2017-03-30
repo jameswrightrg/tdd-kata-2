@@ -48,11 +48,11 @@ namespace Tests
             Assert.That(MeasureShape(cylinder), Is.EqualTo(Math.PI*Math.Pow(radius, 2)).Within(0.0001));
         }
 
-        [Test]
-        public void UnitRadiusCylinderHoldsPiLengthWater()
+        [TestCase(2)]
+        [TestCase(99.9)]
+        public void UnitRadiusCylinderHoldsPiLengthWater(double length)
         {
-            double length = 2;
-            var cylinder = new Cylinder(1, 2);
+            var cylinder = new Cylinder(1, length);
             Assert.That(MeasureShape(cylinder), Is.EqualTo(length* Math.PI).Within(0.00001));
         }
 

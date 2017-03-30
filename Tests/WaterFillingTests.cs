@@ -82,7 +82,7 @@ namespace Tests
         {
             var sideLength = 2;
             var pyramid = PyramidFactory.Create(sideLength, 1);
-            Assert.That(MeasureShape(pyramid), Is.EqualTo(sideLength / 6.0).Within(0.00001));
+            Assert.That(MeasureShape(pyramid), Is.EqualTo(sideLength / 3.0).Within(0.00001));
         }
 
         [Test]

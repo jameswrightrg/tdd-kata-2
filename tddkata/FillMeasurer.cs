@@ -4,9 +4,9 @@ namespace tddkata
 {
     public class FillMeasurer
     {
-        public double Measure(object emptyCube)
+        public double Measure(Cube cube)
         {
-            return 0;
+           return cube.Sidelength;
         }
     }
 }

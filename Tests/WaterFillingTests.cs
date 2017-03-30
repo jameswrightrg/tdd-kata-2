@@ -105,7 +105,7 @@ namespace Tests
         public void UnitFiveSidedPyramidHasSomeWater()
         {
             var pyramid = PyramidFactory.Create(1, 1, 5);
-            Assert.That(MeasureShape(pyramid), Is.EqualTo(1.72).Within(0.0001));
+            Assert.That(MeasureShape(pyramid), Is.EqualTo(1.72048 / 3.0).Within(0.0001));
         }
 
         private static double MeasureShape(IShape shape)

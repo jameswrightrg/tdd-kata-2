@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Sockets;
 
 namespace tddkata
 {
@@ -19,7 +20,17 @@ namespace tddkata
 
             public double GetVolume()
             {
-                return m_Height * Math.Pow(m_SideLength, 2) * (m_Sides - 2) / 6.0;
+                switch (m_Sides)
+                {
+                    case 3:
+                        return m_Height*Math.Pow(m_SideLength, 2)/6.0;
+                    case 4:
+                        return m_Height*Math.Pow(m_SideLength, 2)/3.0;
+                    case 5:
+                        return m_Height*Math.Pow(m_SideLength, 2)*1.72048/3.0;
+                    default:
+                        return 0;
+                }
             }
         }
 

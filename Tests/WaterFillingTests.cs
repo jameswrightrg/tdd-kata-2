@@ -63,6 +63,14 @@ namespace Tests
             Assert.That(MeasureShape(cylinder), Is.EqualTo(Math.PI).Within(0.0001));
         }
 
+        [Test]
+        public void PyramidWithNoHeightHoldsNoWater()
+        {
+            var emptyPyramid = PyramidFactory.Create(0, 0);
+            Assert.That(MeasureShape(emptyPyramid), Is.Zero);
+        }
+
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

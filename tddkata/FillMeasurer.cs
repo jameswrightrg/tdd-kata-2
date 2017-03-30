@@ -6,7 +6,7 @@ namespace tddkata
     {
         public double Measure(Cube cube)
         {
-           return cube.Sidelength;
+            return Math.Pow(cube.Sidelength, 3);
         }
     }
 }

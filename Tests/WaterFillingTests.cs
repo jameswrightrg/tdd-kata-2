@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
@@ -30,7 +31,7 @@ namespace Tests
         {
             var fillMeasurer = new FillMeasurer();
             var cube = Cube.Create(sideLength);
-            Assert.That(fillMeasurer.Measure(cube), Is.EqualTo(sideLength ^ 3).Within(0.001));
+            Assert.That(fillMeasurer.Measure(cube), Is.EqualTo(Math.Pow(sideLength, 3)).Within(0.001));
         }
     }
 }

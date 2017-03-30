@@ -1,27 +1,31 @@
-﻿namespace tddkata
+﻿using System;
+
+namespace tddkata
 {
     public class PyramidFactory
     {
         private class Pyramid : IShape
         {
-            private double m_SideLength;
-            private double m_Height;
+            private readonly double m_SideLength;
+            private readonly double m_Height;
+            private readonly int m_Sides;
 
-            public Pyramid(double sideLength, double height)
+            public Pyramid(double sideLength, double height, int sides)
             {
-                this.m_SideLength = sideLength;
-                this.m_Height = height;
+                m_SideLength = sideLength;
+                m_Height = height;
+                m_Sides = sides;
             }
 
             public double GetVolume()
             {
-                return m_Height * m_SideLength / 6.0;
+                return m_Height * m_SideLength * (m_Sides - 2) / 6.0;
             }
         }
 
-        public static IShape Create(double sideLength, double height)
+        public static IShape Create(double sideLength, double height, int sides = 3)
         {
-            return new Pyramid(sideLength, height);
+            return new Pyramid(sideLength, height, sides);
         }
     }
 }

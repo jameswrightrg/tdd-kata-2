@@ -2,9 +2,9 @@
 
 namespace tddkata
 {
-    public class Cube
+    public class Cube : IShape
     {
-        public double Sidelength { get; }
+        private double Sidelength { get; }
 
         private Cube(double sidelength)
         {
@@ -14,6 +14,11 @@ namespace tddkata
         public static Cube Create(double sidelength)
         {
             return new Cube(sidelength);
+        }
+
+        public double GetVolume()
+        {
+            return Math.Pow(Sidelength, 3);
         }
     }
 }

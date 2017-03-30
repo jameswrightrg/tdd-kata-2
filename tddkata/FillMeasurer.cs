@@ -4,9 +4,9 @@ namespace tddkata
 {
     public class FillMeasurer
     {
-        public double Measure(Cube cube)
+        public double Measure(IShape shape)
         {
-            return Math.Pow(cube.Sidelength, 3);
+            return shape.GetVolume();
         }
     }
 }

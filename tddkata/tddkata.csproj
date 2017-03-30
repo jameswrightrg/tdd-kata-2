@@ -42,6 +42,7 @@
     <Compile Include="Cube.cs" />
     <Compile Include="Cylinder.cs" />
     <Compile Include="FillMeasurer.cs" />
+    <Compile Include="IShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

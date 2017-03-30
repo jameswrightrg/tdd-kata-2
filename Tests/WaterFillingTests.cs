@@ -33,6 +33,13 @@ namespace Tests
             Assert.That(MeasureShape(emptyCylinder), Is.Zero);
         }
 
+        [Test]
+        public void UnitLengthAndRadiusCylinderHoldsPi()
+        {
+            IShape unitCylinder = new Cylinder(1, 1);
+            Assert.That(MeasureShape(unitCylinder), Is.EqualTo(Math.PI).Within(0.00001));
+        }
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

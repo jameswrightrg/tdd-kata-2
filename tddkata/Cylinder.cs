@@ -1,19 +1,21 @@
-﻿namespace tddkata
+﻿using System;
+
+namespace tddkata
 {
     public class Cylinder : IShape
     {
-        private int v1;
-        private int v2;
+        private int radius;
+        private int length;
 
-        public Cylinder(int v1, int v2)
+        public Cylinder(int radius, int length)
         {
-            this.v1 = v1;
-            this.v2 = v2;
+            this.radius = radius;
+            this.length = length;
         }
 
         public double GetVolume()
         {
-            return 0;
+            return Math.PI*radius;
         }
     }
 }

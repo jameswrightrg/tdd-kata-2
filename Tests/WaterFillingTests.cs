@@ -14,8 +14,7 @@ namespace Tests
         public void ZeroDimensionCubeHoldsNoWater()
         {
             var emptyCube = Cube.Create(0);
-            var fillMeasurer = new FillMeasurer();
-            Assert.That(fillMeasurer.Measure(emptyCube), Is.Zero);
+            Assert.That(MeasureShape(emptyCube), Is.Zero);
         }
 
         [TestCase(1)]
@@ -23,17 +22,20 @@ namespace Tests
         [TestCase(1.5)]
         public void CubeHoldsCubeOfSideLengthWater(double sideLength)
         {
-            var fillMeasurer = new FillMeasurer();
             var cube = Cube.Create(sideLength);
-            Assert.That(fillMeasurer.Measure(cube), Is.EqualTo(Math.Pow(sideLength, 3)).Within(0.001));
+            Assert.That(MeasureShape(cube), Is.EqualTo(Math.Pow(sideLength, 3)).Within(0.001));
         }
 
         [Test]
         public void ZeroDimensionCylinderHoldsNoWater()
         {
-            var fillMeasurer = new FillMeasurer();
             var emptyCylinder = new Cylinder(0, 0);
-            Assert.That(fillMeasurer.Measure(emptyCylinder), Is.Zero);
+            Assert.That(MeasureShape(emptyCylinder), Is.Zero);
+        }
+
+        private static double MeasureShape(IShape shape)
+        {
+            return new FillMeasurer().Measure(shape);
         }
     }
 }

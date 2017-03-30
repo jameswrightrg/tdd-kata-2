@@ -4,10 +4,10 @@
     {
         private class Pyramid : IShape
         {
-            private int m_SideLength;
-            private int m_Height;
+            private double m_SideLength;
+            private double m_Height;
 
-            public Pyramid(int sideLength, int height)
+            public Pyramid(double sideLength, double height)
             {
                 this.m_SideLength = sideLength;
                 this.m_Height = height;
@@ -19,7 +19,7 @@
             }
         }
 
-        public static IShape Create(int sideLength, int height)
+        public static IShape Create(double sideLength, double height)
         {
             return new Pyramid(sideLength, height);
         }

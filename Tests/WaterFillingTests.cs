@@ -101,6 +101,13 @@ namespace Tests
             Assert.That(MeasureShape(pyramid), Is.EqualTo(volume).Within(0.00001));
         }
 
+        [Test]
+        public void UnitFiveSidedPyramidHasSomeWater()
+        {
+            var pyramid = PyramidFactory.Create(1, 1, 5);
+            Assert.That(MeasureShape(pyramid), Is.EqualTo(1.72).Within(0.0001));
+        }
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

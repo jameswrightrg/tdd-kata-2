@@ -56,6 +56,13 @@ namespace Tests
             Assert.That(MeasureShape(cylinder), Is.EqualTo(length* Math.PI).Within(0.00001));
         }
 
+        [Test]
+        public void OddlyShapedCylinderHoldsWater()
+        {
+            var cylinder = new Cylinder(2, 0.25);
+            Assert.That(MeasureShape(cylinder), Is.EqualTo(Math.PI).Within(0.0001));
+        }
+
         private static double MeasureShape(IShape shape)
         {
             return new FillMeasurer().Measure(shape);

@@ -19,7 +19,7 @@ namespace tddkata
 
             public double GetVolume()
             {
-                return m_Height * m_SideLength * (m_Sides - 2) / 6.0;
+                return m_Height * Math.Pow(m_SideLength, 2) * (m_Sides - 2) / 6.0;
             }
         }
 
